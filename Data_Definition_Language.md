@@ -183,7 +183,7 @@
     
   ## **D. TRUNCATE Clause**
 
-  1.  Menghapus baris pada tabel. Kolom masih ada.
+1.  Menghapus baris pada tabel. Kolom masih ada.
     ```sql
     TRUNCATE TABLE old_table_1, old_table_2;
     ```
