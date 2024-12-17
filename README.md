@@ -22,7 +22,7 @@ Istilah-istilah yang digunakan dalam PostgreSQL:
 * **Views**: Tabel virtual berdasarkan hasil query.
 * **Functions**: Rangkuman logika yang dapat digunakan kembali.
 
-**C. Penggunaan PostgreSQL dengan SQL**
+## **C. Penggunaan PostgreSQL dengan SQL**
 
 Untuk menggunakan PostgreSQL, bahasa SQL dapat digunakan. Bahasa SQL dapat dibagi menjadi 5 jenis dengan perannya masing-masing.
 * **Data Definition Language (DDL)**: Membuat atau mengubah database, schema, tables, indexes, atau constraints.
