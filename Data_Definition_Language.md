@@ -29,7 +29,10 @@
         column_categoric_1 VARCHAR(100) NOT NULL,
         column_categoric_1 VARCHAR(50) UNIQUE,
         column_numeric_2 NUMERIC(10, 2),
-        column_date DATE DEFAULT CURRENT_DATE
+        column_date DATE DEFAULT CURRENT_DATE,
+        quantity INT,
+        unit_price NUMERIC,
+        total_price NUMERIC GENERATED ALWAYS AS (quantity * unit_price) STORED
     );
     ```
     *   `new_table`: Nama Table
@@ -42,8 +45,10 @@
     *   `NUMERIC(10, 2)`: Column bertipe number dengan panjang 10 digit di depan 0 dan 2 digit di belakang 0
     *   `DATE`: Column bertipe date
     *   `DEFAULT CURRENT_DATE`: Mengisi nilai secara otomatis berdasarkan tanggal sekarang
+    *   `INT`: Membuat data bertipe integer
+    *   `GENERATED ALWAYS AS (quantity * unit_price) STORED`: Membuat kolom yang memiliki data dengan nilai hasil perkalian dua kolom yang lain
 
-3. **CREATE INDEX**, Membuat kolom baru dari tabel yang sudah ada yang bisa digunakan sebagai index (memiliki nilai yang unik tiap baris).
+4. **CREATE INDEX**, Membuat kolom baru dari tabel yang sudah ada yang bisa digunakan sebagai index (memiliki nilai yang unik tiap baris).
     ```sql
     CREATE INDEX new_index ON old_table(old_colummn);
     ```
@@ -51,14 +56,14 @@
     *   `old_table`: Nama tabel
     *   `old_colummn`: Nama column
 
-4. **CREATE USER**, Membuat database user.
+5. **CREATE USER**, Membuat database user.
     ```sql
     CREATE USER new_user WITH PASSWORD 'new_password';
     ```
     *   `new_user`: Username
     *   `new_password`: Password
 
-5. **CREATE ROLE**, Membuat role.
+6. **CREATE ROLE**, Membuat role.
     ```sql
     CREATE ROLE manager 
     WITH 
